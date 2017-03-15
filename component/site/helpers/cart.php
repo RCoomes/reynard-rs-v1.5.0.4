@@ -493,6 +493,7 @@ class rsCarthelper
 				if ($billingaddresses->address != "")
 				{
 					$billadd .= JText::_("COM_REDSHOP_ADDRESS") . ' : ' . $billingaddresses->address . '<br /> ';
+                    $billadd .= $this->_extra_field->list_all_field_display($extra_section, $billingaddresses->users_info_id, 1) . '<br /> ';
 				}
 
 				if ($billingaddresses->zipcode != "")
@@ -574,8 +575,6 @@ class rsCarthelper
 						$billadd .= $taxexereq . '<br />';
 					}
 				}
-
-				$billadd .= $this->_extra_field->list_all_field_display($extra_section, $billingaddresses->users_info_id, 1);
 
 				if (strstr($data, '{quotation_custom_field_list}'))
 				{
@@ -4028,9 +4027,9 @@ class rsCarthelper
 
 				$url            = JURI::base();
 				$article_link   = $url . "index.php?option=com_content&amp;view=article&amp;id=" . TERMS_ARTICLE_ID . "&Itemid=" . $Itemid . "&tmpl=component&for=true";
-				$termscondition = '<label class="checkbox"><input type="checkbox" id="termscondition" name="termscondition" value="1" /> ';
+				$termscondition = '<label class="checkbox"><input type="checkbox" id="termscondition" name="termscondition" value="1" />';
 				$termscondition .= JText::_('COM_REDSHOP_TERMS_AND_CONDITIONS_LBL');
-				$termscondition .= ' <a class="modal" href="' . $article_link . '" rel="{handler: \'iframe\', size: {x: ' . $finalwidth . ', y: ' . $finalheight . '}}">' . JText::_('COM_REDSHOP_TERMS_AND_CONDITIONS_FOR_LBL') . '</a></label>';
+				$termscondition .= '</label> <label><a class="modal" href="' . $article_link . '" rel="{handler: \'iframe\', size: {x: ' . $finalwidth . ', y: ' . $finalheight . '}}">' . JText::_('COM_REDSHOP_TERMS_AND_CONDITIONS_FOR_LBL') . '</a></label>';
 			}
 
 			$template_desc = str_replace($finaltag, $termscondition, $template_desc);
