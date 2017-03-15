@@ -1039,7 +1039,7 @@ class rsUserhelper
 
 		$company_template = $redTemplate->getTemplate("company_billing_template");
 
-		if (count($company_template) <= 0)
+        if (count($company_template) <= 0)
 		{
 			$company_template[0]->template_name = 'company_billing_template';
 			$company_template[0]->template_id   = 0;
@@ -1055,7 +1055,7 @@ class rsUserhelper
 				}
 				else
 				{
-					$company_template_desc = '<table class="admintable" style="height: 221px;" border="0" width="183"><tbody><tr><td width="100" align="right">{email_lbl}:</td><td>{email}</td><td><span class="required">*</span></td></tr><!-- {retype_email_start} --><tr><td width="100" align="right">{retype_email_lbl}</td><td>{retype_email}</td><td><span class="required">*</span></td></tr><!-- {retype_email_end} --><tr><td width="100" align="right">{company_name_lbl}</td><td>{company_name}</td><td><span class="required">*</span></td></tr><!-- {vat_number_start} --><tr><td width="100" align="right">{vat_number_lbl}</td><td>{vat_number}</td><td><span class="required">*</span></td></tr><!-- {vat_number_end} --><tr><td width="100" align="right">{firstname_lbl}</td><td>{firstname}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{lastname_lbl}</td><td>{lastname}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{address_lbl}</td><td>{address}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{zipcode_lbl}</td><td>{zipcode}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{city_lbl}</td><td>{city}</td><td><span class="required">*</span></td></tr><tr id="{country_txtid}" style="{country_style}"><td width="100" align="right">{country_lbl}</td><td>{country}</td><td><span class="required">*</span></td></tr><tr id="{state_txtid}" style="{state_style}"><td width="100" align="right">{state_lbl}</td><td>{state}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{phone_lbl}</td><td>{phone}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{ean_number_lbl}</td><td>{ean_number}</td><td></td></tr><tr><td width="100" align="right">{tax_exempt_lbl}</td><td>{tax_exempt}</td></tr><tr><td colspan="3">{company_extrafield}</td></tr></tbody></table>';
+					$company_template_desc = '<table class="admintable" style="height: 221px;" border="0" width="183"><tbody><tr><td width="100" align="right">{email_lbl}:</td><td>{email}</td><td><span class="required">*</span></td></tr><!-- {retype_email_start} --><tr><td width="100" align="right">{retype_email_lbl}</td><td>{retype_email}</td><td><span class="required">*</span></td></tr><!-- {retype_email_end} --><tr><td width="100" align="right">{company_name_lbl}</td><td>{company_name}</td><td><span class="required">*</span></td></tr><!-- {vat_number_start} --><tr><td width="100" align="right">{vat_number_lbl}</td><td>{vat_number}</td><td><span class="required">*</span></td></tr><!-- {vat_number_end} --><tr><td width="100" align="right">{firstname_lbl}</td><td>{firstname}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{lastname_lbl}</td><td>{lastname}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{address_lbl}</td><td>{address}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{zipcode_lbl}</td><td>{zipcode}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{city_lbl}</td><td>{city}</td><td><span class="required">*</span></td></tr><tr id="{country_txtid}" style="{country_style}"><td width="100" align="right">{country_lbl}</td><td>{country}</td><td><span class="required">*</span></td></tr><tr id="{state_txtid}" style="{state_style}"><td width="100" align="right">{state_lbl}</td><td>{state}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{phone_lbl}</td><td>{phone}</td><td><span class="required">*</span></td></tr><tr><td width="100" align="right">{tax_exempt_lbl}</td><td>{tax_exempt}</td></tr><tr><td colspan="3">{company_extrafield}</td></tr></tbody></table>';
 				}
 
 				$company_template_desc = ($is_company == 1) ? $this->replaceCompanyCustomer($company_template_desc, $post, $lists) : '';
@@ -1173,8 +1173,10 @@ class rsUserhelper
 		$template_desc = str_replace("{firstname}", '<input class="inputbox required" type="text" name="firstname" id="firstname" size="32" maxlength="250" value="' . @$post ["firstname"] . '" />', $template_desc);
 		$template_desc = str_replace("{lastname_lbl}", JText::_('COM_REDSHOP_LASTNAME'), $template_desc);
 		$template_desc = str_replace("{lastname}", '<input class="inputbox required" type="text" name="lastname" id="lastname" size="32" maxlength="250" value="' . @$post ["lastname"] . '" />', $template_desc);
+
 		$template_desc = str_replace("{address_lbl}", JText::_('COM_REDSHOP_ADDRESS'), $template_desc);
 		$template_desc = str_replace("{address}", '<input class="inputbox required" type="text" name="address" id="address" size="32" maxlength="250" value="' . @$post ["address"] . '" />', $template_desc);
+
 		$template_desc = str_replace("{zipcode_lbl}", JText::_('COM_REDSHOP_ZIP'), $template_desc);
 		$template_desc = str_replace("{zipcode}", '<input class="inputbox required"  type="text" name="zipcode" id="zipcode" size="32" maxlength="10" value="' . @$post['zipcode'] . '" onblur="return autoFillCity(this.value,\'BT\');" />', $template_desc);
 		$template_desc = str_replace("{city_lbl}", JText::_('COM_REDSHOP_CITY'), $template_desc);
@@ -1306,6 +1308,7 @@ class rsUserhelper
 			$allowCompany = 'style="display:none;"';
 		}
 
+        $company_name_string      = "";
 		$read_only                = "";
 		$countryarray             = $Redconfiguration->getCountryList(@$post, "country_code_ST", "ST", "inputbox billingRequired valid");
 		$post['country_code_ST']  = $countryarray['country_code_ST'];
@@ -1346,16 +1349,28 @@ class rsUserhelper
 			$extra_field_company = (ALLOW_CUSTOMER_REGISTER_TYPE != 1 && $lists['shipping_company_field'] != "") ? $lists['shipping_company_field'] : "";
 			$extra_field_user    = (ALLOW_CUSTOMER_REGISTER_TYPE != 2 && $lists['shipping_customer_field'] != "") ? $lists['shipping_customer_field'] : "";
 
-			$template_middle_company = str_replace("{extra_field_st}", $extra_field_company, $template_middle);
+            $company_name_start = strpos($extra_field_company, '<tr><td width="100" align="right"><label>Company name</label>');
+            $company_name_length = strlen($extra_field_company) - $company_name_start;
+
+            $company_name_string = substr($extra_field_company, $company_name_start, $company_name_length);
+
+            $extra_field_company = str_replace($company_name_string, '', $extra_field_company);
+            $extra_field_user    = str_replace($company_name_string, '', $extra_field_user);
+
+
+            $template_middle_company = str_replace("{extra_field_st}", $extra_field_company, $template_middle);
 			$template_middle_user    = str_replace("{extra_field_st}", $extra_field_user, $template_middle);
 
 			$template_middle_company = '<div id="exCompanyFieldST" ' . $allowCompany . '>' . $template_middle_company . '</div>';
 			$template_middle_user    = '<div id="exCustomerFieldST" ' . $allowCustomer . '>' . $template_middle_user . '</div>';
 
 			$template_desc = $template_pd_sdata[0] . $template_middle_company . $template_middle_user . $template_pd_edata[1];
+
 		}
 
-		return $template_desc;
+        $template_desc = str_replace("{companyname_st}", $company_name_string, $template_desc);
+
+        return $template_desc;
 	}
 
 	public function getCaptchaTable()
