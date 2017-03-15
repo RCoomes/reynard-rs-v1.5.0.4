@@ -68,12 +68,8 @@ if ($displayData['cartOutput'] == 'simple'): ?>
 <?php endif; ?>
 <?php if ((!DEFAULT_QUOTATION_MODE || (DEFAULT_QUOTATION_MODE && SHOW_QUOTATION_PRICE)) && $displayData['totalQuantity']): ?>
 <div class="mod_cart_totalprice">
-	<div class="mod_cart_total_txt cartItemAlign" id="mod_cart_total_txt_ajax" >
-		<?php echo JText::_('MOD_REDSHOP_CART_TOTAL'); ?> :
-	</div>
-	<div class="mod_cart_total_value cartItemAlign" id="mod_cart_total_value_ajax">
-		<?php echo $productHelper->getProductFormattedPrice($total); ?>
-	</div>
+	<div class="mod_cart_total_txt cartItemAlign" id="mod_cart_total_txt_ajax"><?php echo JText::_('MOD_REDSHOP_CART_TOTAL'); ?>:&nbsp;</div>
+	<div class="mod_cart_total_value cartItemAlign" id="mod_cart_total_value_ajax"><?php echo $productHelper->getProductFormattedPrice($total); ?></div>
 	<div class="clr"></div>
 	<?php if ($displayData['showShippingLine']):
 		$shippingValue = $cart['shipping'];
