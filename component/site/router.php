@@ -699,7 +699,11 @@ function redshopBuildRoute(&$query)
 			break;
 	}
 
-	return $segments;
+    if ($segments[0] == $menu->alias) {
+        array_shift($segments);
+    }
+
+    return $segments;
 }
 
 /**
