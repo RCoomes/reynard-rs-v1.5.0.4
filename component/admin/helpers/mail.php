@@ -284,15 +284,15 @@ class redshopMail
 
 			if ($thirdpartyemail != '')
 			{
-				if (!JMail::getInstance()->sendMail($from, $fromname, $thirdpartyemail, $subject, $body, 1, null, $bcc))
+				if (!JMail::getInstance()->sendMail($from, $fromname, $thirdpartyemail, $subject, $body, 1, null, $mailbcc))
 				{
-					$this->setError(JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
+                      return JError::raiseError(500, JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
 				}
 			}
 
-			if (!JMail::getInstance()->sendMail($from, $fromname, $email, $subject, $body, 1, null, $bcc))
+			if (!JMail::getInstance()->sendMail($from, $fromname, $email, $subject, $body, 1, null, $mailbcc))
 			{
-				$this->setError(JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
+                 return JError::raiseError(500, JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
 			}
 		}
 
@@ -310,7 +310,7 @@ class redshopMail
 			{
 				if (!JMail::getInstance()->sendMail($from, $fromname, $manufacturer_email[$man], $subject, $body, 1))
 				{
-					$this->setError(JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
+                      return JError::raiseError(500, JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
 				}
 			}
 		}
@@ -323,7 +323,7 @@ class redshopMail
 			{
 				if (!JMail::getInstance()->sendMail($from, $fromname, $supplier_email[$sup], $subject, $body, 1))
 				{
-					$this->setError(JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
+                      return JError::raiseError(500, JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
 				}
 			}
 		}
@@ -428,7 +428,7 @@ class redshopMail
 			{
 				if (!JMail::getInstance()->sendMail($from, $fromname, $email, $subject, $body, 1, null, $bcc))
 				{
-					$this->setError(JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
+                      return JError::raiseError(500, JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
 				}
 			}
 		}
@@ -441,7 +441,7 @@ class redshopMail
 			{
 				if (!JMail::getInstance()->sendMail($from, $fromname, $manufacturer_email[$man], $subject, $body, 1))
 				{
-					$this->setError(JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
+                      return JError::raiseError(500, JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
 				}
 			}
 		}
@@ -759,7 +759,7 @@ class redshopMail
 		{
 			if (!JMail::getInstance()->sendMail($from, $fromname, $email, $subject, $body1, 1, null, $mailbcc, $invoice_attachment))
 			{
-				$this->setError(JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
+                  return JError::raiseError(500, JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
 
 				return false;
 			}
@@ -771,7 +771,7 @@ class redshopMail
 
 			if (!JMail::getInstance()->sendMail($from, $fromname, $sendto, $subject, $body1, 1, null, $mailbcc, $invoice_attachment))
 			{
-				$this->setError(JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
+                  return JError::raiseError(500, JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
 
 				return false;
 			}
@@ -1402,7 +1402,7 @@ class redshopMail
 
 			if (!JMail::getInstance()->sendMail($from, $fromname, $email, $subject, $body, 1, null, $bcc))
 			{
-				$this->setError('ERROR_SENDING_QUOTATION_MAIL');
+                  return JError::raiseError(500, JText::_('ERROR_SENDING_QUOTATION_MAIL'));
 			}
 		}
 
@@ -1477,7 +1477,7 @@ class redshopMail
 			{
 				if (!JMail::getInstance()->sendMail($from, $fromname, $email, $subject, $message, 1, null, $mailbcc))
 				{
-					$this->setError(JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
+                      return JError::raiseError(500, JText::_('COM_REDSHOP_ERROR_SENDING_CONFIRMATION_MAIL'));
 				}
 			}
 		}
