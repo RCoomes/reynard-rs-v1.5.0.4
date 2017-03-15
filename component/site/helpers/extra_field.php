@@ -67,7 +67,7 @@ class extraField
 		{
 			$type = $row_data[$i]->field_type;
 
-			$ex_field .= '<tr><td width="100" valign="top" align="right"><label>' . JText::_($row_data[$i]->field_title) . ': </label></td><td>';
+			$ex_field .= '<tr><td width="100" align="right"><label>' . JText::_($row_data[$i]->field_title) . '</label></td><td>';
 
 			$data_value = $this->getSectionFieldDataList($row_data[$i]->field_id, $field_section, $section_id);
 
@@ -93,7 +93,7 @@ class extraField
 			}
 			else
 			{
-				$class      = '';
+                $class      = 'class="'.$row_data[$i]->field_class.'"';
 				$span_class = '';
 			}
 
