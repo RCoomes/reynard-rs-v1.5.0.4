@@ -422,11 +422,11 @@ class RedshopControllerCheckout extends RedshopController
 				$shipping_rate_id = "";
 			}
 
-			if ($shipping_rate_id == '' && $cart['free_shipping'] != 1)
-			{
-				$msg = JText::_('LIB_REDSHOP_SELECT_SHIP_METHOD');
-				$app->redirect('index.php?option=com_redshop&view=checkout&Itemid=' . $Itemid, $msg);
-			}
+			//if ($shipping_rate_id == '' && $cart['free_shipping'] != 1)
+			//{
+			//	$msg = JText::_('LIB_REDSHOP_SELECT_SHIP_METHOD');
+			//	$app->redirect('index.php?option=com_redshop&view=checkout&Itemid=' . $Itemid, $msg);
+			//}
 		}
 
 		if ($payment_method_id != '')
