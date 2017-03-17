@@ -176,9 +176,9 @@ else
 			{
 				$checked_style = (CREATE_ACCOUNT_CHECKBOX == 1) ? 'checked="checked"' : "''";
 				?>
-				<h4><label><input type="checkbox" name="createaccount" <?php echo $checked_style;?> id="createaccount"
+				<h4><label class="checkbox"><input type="checkbox" name="createaccount" <?php echo $checked_style;?> id="createaccount"
 				           value="1" onclick="createUserAccount(this);"/>
-					<?php echo JText::_('COM_REDSHOP_CREATE_ACCOUNT');?></label></h4>
+					<span><?php echo JText::_('COM_REDSHOP_CREATE_ACCOUNT');?></span></label></h4>
 			<?php
 			}    ?>
 			<div>
