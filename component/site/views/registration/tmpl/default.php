@@ -40,7 +40,7 @@ if ($this->params->get('show_page_heading', 1))
 </div>
 <table cellpadding="5" cellspacing="0" border="0">
 	<tr>
-		<td><span <?php echo $this->lists['allowCustomer'];?>>
+		<td style="display: none;"><span <?php echo $this->lists['allowCustomer'];?>>
 				<h4>
 					<label>
 					<img src="<?php echo REDSHOP_FRONT_IMAGES_ABSPATH; ?>account/personal-icon.jpg" align="absmiddle">
@@ -54,7 +54,7 @@ if ($this->params->get('show_page_heading', 1))
 					<?php echo JText::_('COM_REDSHOP_USER_REGISTRATION'); ?>
 					</label>
 				</h4></span></td>
-		<td><span <?php echo $this->lists['allowCompany'];?>><h4>
+		<td style="display: none;"><span <?php echo $this->lists['allowCompany'];?>><h4>
 					<label>
 					<img src="<?php echo REDSHOP_FRONT_IMAGES_ABSPATH; ?>account/business-icon.jpg" align="absmiddle">
 					<input type="radio" onclick="showCompanyOrCustomer(this);" name="togglerchecker" id="toggler2"
