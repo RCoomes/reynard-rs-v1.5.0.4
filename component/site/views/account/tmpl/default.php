@@ -148,14 +148,6 @@ if (($this->userdata->is_company == 1) && ($this->userdata->vat_number != ""))
 	$customer_vatnumber     = $this->userdata->vat_number;
 }
 
-$ean_number_lbl = '';
-$ean_number     = '';
-
-if (($this->userdata->is_company == 1) && ($this->userdata->ean_number != ""))
-{
-	$ean_number_lbl = JText::_('COM_REDSHOP_EAN_NUMBER');
-	$ean_number     = $this->userdata->ean_number;
-}
 
 $requesting_tax_exempt_lbl = '';
 $requesting_tax_exempt     = '';
@@ -179,9 +171,6 @@ $template_desc = str_replace('{requesting_tax_exempt}', $requesting_tax_exempt, 
 
 $template_desc = str_replace('{vatnumber_lbl}', $customer_vatnumber_lbl, $template_desc);
 $template_desc = str_replace('{vatnumber}', $customer_vatnumber, $template_desc);
-
-$template_desc = str_replace('{ean_number_lbl}', $ean_number_lbl, $template_desc);
-$template_desc = str_replace('{ean_number}', $ean_number, $template_desc);
 
 $customer_email_lbl = '';
 $customer_email     = '';
