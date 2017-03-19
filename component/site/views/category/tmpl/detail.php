@@ -11,6 +11,9 @@ defined('_JEXEC') or die;
 
 JHtml::_('behavior.tooltip');
 JHtmlBehavior::modal();
+
+JHtml::script(Juri::base() . 'media/com_redshop/js/custom.js');
+
 $url = JURI::base();
 
 $objhelper = new redhelper;
