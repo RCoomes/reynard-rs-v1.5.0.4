@@ -42,7 +42,7 @@ $billingaddresses = $model->billingaddresses();
 	<?php
 	}?>
 	<tr>
-		<td width="100" align="left">hhhh<label><?php echo JText::_('COM_REDSHOP_FIRSTNAME');?>:</label></td>
+		<td width="100" align="left"><label><?php echo JText::_('COM_REDSHOP_FIRSTNAME');?>:</label></td>
 		<td><?php echo $billingaddresses->firstname;?></td>
 	</tr>
 	<tr>
@@ -131,6 +131,16 @@ $billingaddresses = $model->billingaddresses();
 		<tr>
 			<td width="100" align="left"><label><?php echo JText::_('COM_REDSHOP_EMAIL');?>:</label></td>
 			<td><?php echo $billingaddresses->user_email ? $billingaddresses->user_email : $user->email;?></td>
+		</tr>
+	<?php
+	}
+
+	if ($billingaddresses->is_company == 1)
+	{
+		?>
+		<tr>
+			<td width="100" align="left"><label><?php echo JText::_('COM_REDSHOP_EAN_NUMBER');?>:</label></td>
+			<td><?php echo $billingaddresses->ean_number;?></td>
 		</tr>
 	<?php
 	}
