@@ -15,7 +15,7 @@
 	<tr>
 		<td width="100" align="right">{company_name_lbl}</td>
 		<td>{company_name}</td>
-		<td><span class="required">*</span></td>
+		<td></td>
 	</tr>
 	<!-- {vat_number_start} -->
 	<tr>
