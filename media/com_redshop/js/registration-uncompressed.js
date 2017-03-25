@@ -60,6 +60,9 @@ if(typeof(window['jQuery']) != "undefined")
 					required: function (){if(document.getElementById("createaccount") && rs("#createaccount").is(":checked") || (!document.getElementById("createaccount") && rs("#username") )) {return true;}else {  return false;}},
 					minlength: 2
 				},
+				company_name: {
+					required: function (){if(rs("#toggler2").is(":checked")) {return true;}else {  return false;}}
+				},
 				vat_number: {
 					required: function (){if(rs("#toggler2").is(":checked") && redSHOP.RSConfig._('REQUIRED_VAT_NUMBER')==1) {return true;}else {  return false;}}
 				},
