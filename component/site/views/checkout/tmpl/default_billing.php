@@ -27,7 +27,7 @@ $billingaddresses = $model->billingaddresses();    ?>
 	}
 	?>
 	<tr>
-		<td width="100" align="left"><?php echo JText::_('COM_REDSHOP_FIRSTNAME');?>:</td>
+		<td width="100" align="left">hhhh<?php echo JText::_('COM_REDSHOP_FIRSTNAME');?>:</td>
 		<td><?php echo $billingaddresses->firstname;?></td>
 	</tr>
 	<tr>
@@ -105,21 +105,6 @@ $billingaddresses = $model->billingaddresses();    ?>
 			<td><?php echo $billingaddresses->user_email ? $billingaddresses->user_email : $user->email;?></td>
 		</tr>
 	<?php
-	}
-
-	if ($billingaddresses->is_company == 1)
-	{
-		if ($billingaddresses->ean_number != "")
-		{
-			?>
-			<tr>
-				<td width="100" align="left"><?php echo JText::_('COM_REDSHOP_EAN_NUMBER');?>:</td>
-				<td><?php echo $billingaddresses->ean_number;?></td>
-			</tr>
-			<!-- <tr><td width="100" align="left"><?php echo JText::_('COM_REDSHOP_REQUISITION_NUMBER' );?>:</td>
-		<td><?php echo $billingaddresses->requisition_number;?></td></tr>-->
-		<?php
-		}
 	}
 
 	if ($billingaddresses->is_company == 1 && USE_TAX_EXEMPT == 1)
